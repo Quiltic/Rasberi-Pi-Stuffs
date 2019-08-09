@@ -23,15 +23,22 @@ def get_Host_name_IP():
   
 # Driver code 
 ip = get_Host_name_IP() #Function call
+
+
 os.system("cd /tmp/test/")
+os.system("git init")
+try:
+    os.system("git pull https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
+except:
+    os.system("git clone https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
+print("cloned")
+
 file = open("IPadress.txt",'w')
 file.write(ip)
 file.close()
+print("filemade")
 
-
-os.system("cd /tmp/test/")
-os.system("git clone https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
-print("cloned")
+os.system("git remote add origin https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
 timestamp = "git commit -m 'Updating the IP Timestamp: %s'" % time.localtime
 os.system(timestamp)
-os.system("git push")
+os.system("git push --set-upstream origin master")
