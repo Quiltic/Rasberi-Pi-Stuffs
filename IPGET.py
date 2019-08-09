@@ -27,10 +27,7 @@ ip = get_Host_name_IP() #Function call
 
 os.system("cd /tmp/test/")
 os.system("git init")
-try:
-    os.system("git pull https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
-except:
-    os.system("git clone https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
+os.system("git pull https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
 print("cloned")
 
 file = open("IPadress.txt",'w')
