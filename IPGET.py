@@ -37,6 +37,6 @@ print("filemade")
 
 os.system("git remote add origin https://github.com/Quiltic/Rasberi-Pi-Stuffs.git")
 os.system("git add .")
-timestamp = "git commit -m 'Updating the IP Timestamp: %s'" % time.localtime
+timestamp = "git commit -m 'Updating the IP Timestamp: " + str(time.localtime) + "'"
 os.system(timestamp)
 os.system("git push --set-upstream origin master")
